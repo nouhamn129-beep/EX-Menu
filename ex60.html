@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <title>Menu</title>
+        <h2>Menu restaurant</h2>
+    <style>
+         h2 {
+            text-align: center;
+        }
+        .div-parent{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+        .div-menu {
+            display: flex;
+            justify-content: center;
+            gap : 60px ;
+            margin-top: 50px;
+        }
+        .div-total {
+            text-align:center ;
+            margin-top: 80px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="div-parent">
+        <div class="div-menu">
+        <div>
+        <h3>entrée</h3>
+        <select id="entrée">
+            <option value="30">salade</option>
+           <option value="33">soupe</option>
+        </select>
+        </div>
+        <div>
+        <h4>plat</h4>
+        <select id="plat">
+            <option value="50">burger</option>
+            <option value="45">pizza</option>
+            <option value="64">steak</option>
+        </select>
+        </div>
+        <div>
+        <h5>dessert</h5>
+        <select id="dessert">
+            <option value="28">tiramisu</option>
+            <option value="20">glace</option>
+            <option value="35">cheesecake</option>
+        </select>
+        </div>
+        </div>
+        </div>
+        <script>
+            function calculate() {
+                const entrée = parseFloat(document.getElementById("entrée").value);
+        const plat = parseFloat(document.getElementById("plat").value);
+        const dessert = parseFloat(document.getElementById("dessert").value);
+        const total= (entrée + plat+ dessert);
+        document.getElementById("result").innerHTML = "votre total : " + total.toFixed(2) +"dh";
+            }
+        </script>
+
+    <div class="div-total">
+        <button onclick ="calculate()">Total </button>
+        <p id="result"></p>
+        </div>
+        </body>
+</html>
